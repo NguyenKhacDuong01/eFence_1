@@ -307,7 +307,7 @@ int main(void)
     SendBit(0, 3);
     SendBit(0, 4);
     delay_ms(500);
-    UART1_SendString("Hello, UART 2!\r");
+    UART1_SendString("Hello, UART 2!\r"); 
     
     // Goi ham tach byte
     int i= 0;
@@ -739,6 +739,7 @@ void pollReceiveBit(void)
             count = 0;
             tick_Byte ++;
             isHandling = 0;
+//            if (receivedByte == )
             int i = 0;
             for(i = 0; i < 4; i++){
                 if( receivedByte & (0x01<<i) ){
@@ -750,7 +751,7 @@ void pollReceiveBit(void)
 
             if (tick_Byte == 2)
             {
-                UART1_SendString("\r");
+//                UART1_SendString("\r");
                 tick_Byte = 0;
 
             }
